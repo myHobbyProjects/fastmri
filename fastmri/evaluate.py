@@ -119,6 +119,8 @@ def evaluate(args, recons_key):
             recons = transforms.center_crop(
                 recons, (target.shape[-1], target.shape[-1])
             )
+            
+            recons = recons.reshape(-1, target.shape[-1], target.shape[-1])
             metrics.push(target, recons)
 
     return metrics

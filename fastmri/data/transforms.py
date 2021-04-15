@@ -228,7 +228,7 @@ class UnetDataTransform:
     def __init__(
         self,
         which_challenge: str,
-        mask_func: Optional[MaskFunc] = None,
+        mask_func: Optional[MaskFunc] = RandomMaskFunc(center_fractions=[0.04], accelerations=[4],
         use_seed: bool = True,
     ):
         """
